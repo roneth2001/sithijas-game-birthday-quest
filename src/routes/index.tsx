@@ -197,15 +197,6 @@ function Index() {
       {/* Hidden audio element for uploaded MP3 */}
       <audio ref={audioRef} src="/music/birthday-song.mp3" loop preload="metadata" />
 
-      {/* Floating music control */}
-      <button
-        type="button"
-        onClick={toggleMusic}
-        aria-label={musicPlaying ? "Pause music" : "Play music"}
-        className="fixed right-4 top-4 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-border bg-card shadow-lg transition-transform hover:scale-110 active:scale-95"
-      >
-        <span className="text-xl">{musicPlaying ? "🔊" : "🔇"}</span>
-      </button>
 
       {/* Top progress bar */}
       <div className="fixed left-0 top-0 z-40 h-1.5 w-full bg-muted">
@@ -219,7 +210,7 @@ function Index() {
       <section className="glow-hero relative flex min-h-screen flex-col items-center justify-center px-6 text-center">
         <div className="animate-float mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-1.5 backdrop-blur-sm">
           <span className="h-2 w-2 rounded-full bg-green-500" />
-          <span className="text-sm font-medium text-muted-foreground">Online · Level 22 Unlocked</span>
+          <span className="text-sm font-medium text-muted-foreground"> Level 22 Unlocked</span>
         </div>
 
         <h1 className="mb-2 text-5xl font-extrabold tracking-tight text-foreground sm:text-7xl">
