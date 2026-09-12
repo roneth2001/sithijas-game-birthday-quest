@@ -370,7 +370,15 @@ function Index() {
                 onClick={launchCelebration}
                 className="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-lg font-bold text-accent-foreground shadow-lg transition-transform hover:scale-105 active:scale-95"
               >
-                <span>🚀</span> Deploy Celebration {launchCount > 0 ? `(${launchCount})` : ""}
+                {launchCount === 0 && (
+                  <span className="ml-2 text-sm text-foreground"><span>🚀</span> Deploy Celebration!</span>
+                )}
+                {launchCount === 1 && (
+                  <span className="ml-2 text-sm text-foreground"><span>📷</span> Click to see your memory!</span>
+                )}
+                {launchCount >1 && (
+                  <span className="ml-2 text-sm text-white"><span>🚀</span> Click to relaunch!</span>
+                )}
               </button>
             </div>
           )}
@@ -403,27 +411,6 @@ function Index() {
           <span className="syntax-keyword">return</span>{" "}
           <span className="syntax-string">&quot;Best birthday ever, Sithija!&quot;</span>;
         </p>
-        <button
-          type="button"
-          onClick={() => setShowInstructions((s) => !s)}
-          className="mt-6 text-sm text-primary underline-offset-4 hover:underline"
-        >
-          {showInstructions ? "Hide upload instructions" : "How to add your photos & music"}
-        </button>
-        {showInstructions && (
-          <div className="mt-4 rounded-xl border border-border bg-card p-4 text-left text-sm text-foreground shadow-sm">
-            <ol className="list-decimal space-y-2 pl-5 text-muted-foreground">
-              <li>
-                Add your MP3 to <code className="rounded bg-muted px-1">public/music/birthday-song.mp3</code>.
-              </li>
-              <li>
-                Add your images to <code className="rounded bg-muted px-1">public/images/photo1.jpg</code>{" "}
-                through <code className="rounded bg-muted px-1">photo6.jpg</code>.
-              </li>
-              <li>Refresh the page — the speaker button and gallery will pick them up automatically.</li>
-            </ol>
-          </div>
-        )}
       </footer>
     </main>
   );

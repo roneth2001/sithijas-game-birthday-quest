@@ -209,6 +209,22 @@
     margin-left: 0.1em;
   }
 
+  /* Shimmer for headings */
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .shimmer-text {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 2.8s linear infinite;
+    mix-blend-mode: screen;
+  }
+
   /* Floating animation for celebratory elements */
   @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -255,6 +271,11 @@
     pointer-events: none;
     z-index: 9999;
     animation: fall linear forwards;
+  }
+
+  /* Utility to allow per-item animation delay via style var */
+  .photo-animate {
+    animation-delay: var(--delay, 0s);
   }
 
   /* Soft radial glow behind hero */
