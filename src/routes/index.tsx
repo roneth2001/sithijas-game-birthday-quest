@@ -236,6 +236,8 @@ function Index() {
 
         <button
           type="button"
+          data-testid="open-card-toggle"
+          onMouseDown={() => console.log("mousedown on toggle")}
           onClick={() => {
             console.log("Toggle clicked, started:", started);
             if (!started) {
