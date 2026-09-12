@@ -236,10 +236,7 @@ function Index() {
 
         <button
           type="button"
-          data-testid="open-card-toggle"
-          onMouseDown={() => console.log("mousedown on toggle")}
           onClick={() => {
-            console.log("Toggle clicked, started:", started);
             if (!started) {
               setStarted(true);
               setStage("compile");
@@ -251,11 +248,19 @@ function Index() {
         >
           <span className="sr-only">Open your card</span>
           <span
-            className={`absolute flex h-12 w-12 items-center justify-center rounded-full bg-primary text-2xl text-primary-foreground shadow-md transition-all duration-500 ease-out ${
+            className={`absolute flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md transition-all duration-500 ease-out ${
               started ? "left-[calc(100%-3.5rem)]" : "left-2"
             }`}
           >
-            🎂
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="h-6 w-6"
+              aria-hidden="true"
+            >
+              <path d="M12 2a1.5 1.5 0 0 1 1.5 1.5v.5A2.5 2.5 0 1 1 12 9a2.5 2.5 0 0 1-1.5-4.5v-.5A1.5 1.5 0 0 1 12 2Zm-7 7h14c1.66 0 3 1.34 3 3v2H2v-2c0-1.66 1.34-3 3-3Zm-3 6h20v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6Z" />
+            </svg>
           </span>
           <span
             className={`w-full text-center text-lg font-bold text-foreground transition-all duration-300 ${
