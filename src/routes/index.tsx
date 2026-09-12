@@ -252,7 +252,7 @@ function Index() {
 
       {/* Stage: Compile wishes (typing terminal) */}
       {started && stage !== "intro" && (
-        <section className="mx-auto flex max-w-4xl flex-col gap-6 px-6 py-20">
+        <section ref={gameAreaRef} className="mx-auto flex max-w-4xl flex-col gap-6 px-6 py-20">
           <div className="rounded-2xl border border-border bg-terminal p-6 font-mono-code text-terminal-foreground shadow-xl sm:p-8">
             <div className="mb-4 flex items-center gap-2">
               <span className="h-3 w-3 rounded-full bg-red-500" />
