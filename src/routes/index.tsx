@@ -58,6 +58,7 @@ function Index() {
   const [lineIndex, setLineIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [stage, setStage] = useState<"intro" | "compile" | "debug" | "deploy" | "gallery">("intro");
+  const gameAreaRef = useRef<HTMLDivElement>(null);
 
   const [bugs, setBugs] = useState<Bug[]>([]);
   const [bugsSquashed, setBugsSquashed] = useState(0);
