@@ -130,7 +130,7 @@ function Index() {
       if (!bugAreaRef.current) return;
       const rect = bugAreaRef.current.getBoundingClientRect();
       const id = Date.now() + Math.random();
-      const icon = ["🐛", "🪲", "🐜", "🦟"][Math.floor(Math.random() * 4)];
+      const icon = ["🐛", "🪲", "🐜", "🦟"][Math.floor(Math.random() * 4)]!;
       const x = Math.max(16, Math.min(rect.width - 48, Math.random() * rect.width));
       const y = Math.max(16, Math.min(rect.height - 48, Math.random() * rect.height));
       setBugs((prev) => [...prev, { id, x, y, icon, rotation: Math.random() * 360 }]);
