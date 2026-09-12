@@ -93,6 +93,13 @@ function Index() {
     }
   }, []);
 
+  // Scroll the game area into view once the user starts
+  useEffect(() => {
+    if (started && gameAreaRef.current) {
+      gameAreaRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [started]);
+
   // Typing the code script
   useEffect(() => {
     if (stage !== "compile" || !started) return;
