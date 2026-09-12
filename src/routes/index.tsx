@@ -107,7 +107,7 @@ function Index() {
       const t = setTimeout(() => setStage("debug"), 900);
       return () => clearTimeout(t);
     }
-    const currentLine = gameScript[lineIndex];
+    const currentLine = gameScript[lineIndex]!;
     const timer = setTimeout(
       () => {
         if (charIndex < currentLine.length) {
