@@ -237,6 +237,7 @@ function Index() {
         <button
           type="button"
           onClick={() => {
+            console.log("Toggle clicked, started:", started);
             if (!started) {
               setStarted(true);
               setStage("compile");
