@@ -237,12 +237,30 @@ function Index() {
         <button
           type="button"
           onClick={() => {
-            setStarted(true);
-            setStage("compile");
+            if (!started) {
+              setStarted(true);
+              setStage("compile");
+            }
           }}
-          className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-lg font-semibold text-primary-foreground shadow-lg transition-transform hover:scale-105 active:scale-95"
+          disabled={started}
+          aria-pressed={started}
+          className="group relative inline-flex h-16 w-72 items-center rounded-full border-2 border-primary bg-card px-2 shadow-lg transition-colors hover:bg-card/80 disabled:cursor-default disabled:opacity-90"
         >
-          <span>▶</span> Start Birthday Protocol
+          <span className="sr-only">Open your card</span>
+          <span
+            className={`absolute flex h-12 w-12 items-center justify-center rounded-full bg-primary text-2xl text-primary-foreground shadow-md transition-all duration-500 ease-out ${
+              started ? "left-[calc(100%-3.5rem)]" : "left-2"
+            }`}
+          >
+            🎂
+          </span>
+          <span
+            className={`w-full text-center text-lg font-bold text-foreground transition-all duration-300 ${
+              started ? "pr-14 pl-4" : "pl-14 pr-4"
+            }`}
+          >
+            {started ? "CARD OPENED" : "OPEN YOUR CARD"}
+          </span>
         </button>
 
         <p className="mt-4 text-sm text-muted-foreground">
