@@ -85,7 +85,7 @@ function Index() {
       const el = document.createElement("div");
       el.className = "confetti";
       el.style.left = `${Math.random() * 100}vw`;
-      el.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      el.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]!;
       el.style.animationDuration = `${1.5 + Math.random() * 2}s`;
       el.style.transform = `rotate(${Math.random() * 360}deg)`;
       document.body.appendChild(el);
