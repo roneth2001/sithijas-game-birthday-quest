@@ -263,7 +263,7 @@ function Index() {
         </button>
 
         <p className="mt-4 text-sm text-muted-foreground">
-          A playable card for a software engineer.
+          A playable card for your birthday celebration!
         </p>
       </section>
 
@@ -313,7 +313,7 @@ function Index() {
             <div className="rounded-2xl border border-border bg-card p-6 shadow-lg sm:p-8">
               <h2 className="mb-2 text-2xl font-bold text-foreground">Level 2: Debug the Cake</h2>
               <p className="mb-4 text-muted-foreground">
-                Bugs are trying to crash the party! Squash {Math.max(0, 10 - bugsSquashed)} more to reveal the cake.
+                Bugs are trying to crash the party! Squash {Math.max(0, 10 - bugsSquashed)} more to reveal your party!
               </p>
               <div
                 ref={bugAreaRef}
@@ -380,10 +380,7 @@ function Index() {
       {(stage === "gallery" || showFinalMessage) && (
         <section className="mx-auto max-w-5xl px-6 pb-24 pt-8">
           <div className="mb-8 text-center">
-            <h2 className="text-2xl font-bold text-foreground">Memory Gallery</h2>
-            <p className="text-muted-foreground">
-              Drop your photos into the <code className="rounded bg-muted px-1 py-0.5">public/images/</code> folder and refresh.
-            </p>
+            <h2 className="text-2xl font-bold text-foreground">Your Memories</h2>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <PhotoCard src="/images/photo1.jpg" alt="Memory 1" />
